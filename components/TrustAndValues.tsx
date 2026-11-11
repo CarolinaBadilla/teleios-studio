@@ -1,3 +1,5 @@
+import { SpotlightCard } from "./SpotlightCard";
+
 export function TrustAndValues() {
   const values = [
     {
@@ -10,10 +12,9 @@ export function TrustAndValues() {
         "Segregación y cifrado de datos comerciales sensibles.",
         "Arquitectura defensiva basada en estándares OWASP.",
       ],
-      // Lucide ShieldCheck
       icon: (
         <svg
-          className="w-6 h-6 text-amber-700"
+          className="w-5 h-5 text-amber-700"
           fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
@@ -36,10 +37,9 @@ export function TrustAndValues() {
         "Automatización de tareas repetitivas de alta demanda cognitiva.",
         "Costos operativos optimizados y control presupuestario.",
       ],
-      // Lucide Sparkles
       icon: (
         <svg
-          className="w-6 h-6 text-amber-700"
+          className="w-5 h-5 text-amber-700"
           fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
@@ -65,10 +65,9 @@ export function TrustAndValues() {
         "Compatibilidad con escáneres e impresoras de punto de venta.",
         "Mapeo geoespacial interactivo y conexión con servicios tributarios.",
       ],
-      // Lucide Layers
       icon: (
         <svg
-          className="w-6 h-6 text-amber-700"
+          className="w-5 h-5 text-amber-700"
           fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
@@ -85,62 +84,43 @@ export function TrustAndValues() {
   ];
 
   return (
-    <section className="relative py-24 bg-[#FAFAFA] overflow-hidden border-t border-amber-900/10">
-      
-      {/* Resplandor cenital aureo suave */}
-      <div
-        className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[750px] h-[400px] bg-[radial-gradient(ellipse_at_top,_rgba(245,158,11,0.06),_rgba(250,250,250,0)_70%)]"
-        aria-hidden="true"
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 z-10">
+    <section id="principios" className="relative py-20 sm:py-24 bg-white overflow-hidden scroll-mt-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
         
-        {/* Cabecera */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-600/20 bg-amber-500/[0.04] mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-            <span className="text-[11px] font-medium tracking-[0.25em] uppercase text-amber-900/80">
-              Confianza & Rigor Técnico
+        {/* Cabecera Asimétrica Editorial */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-8 sm:pb-12 border-b border-zinc-200/60 mb-10 sm:mb-16">
+          <div className="space-y-2">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-amber-800/80 font-medium">
+              01 &middot; Principios Técnicos
             </span>
+            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-normal text-zinc-950 tracking-tight">
+              Sistemas concebidos con rigor técnico
+            </h2>
+            <div className="w-16 sm:w-20 h-px bg-amber-600/40" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-zinc-950 leading-tight">
-            Ingeniería edificada sobre{" "}
-            <span className="italic font-light text-zinc-900 border-b border-amber-600/30">
-              fundamentos sólidos
-            </span>.
-          </h2>
-
-          <p className="mt-4 text-base sm:text-lg text-zinc-600 font-light leading-relaxed">
-            Nuestros principios no son promesas abstractas: son estándares de código
-            diseñados para proteger el patrimonio digital y la continuidad de cada comercio.
+          <p className="max-w-md text-xs sm:text-sm text-zinc-600 font-light leading-relaxed">
+            Planteamos estándares inquebrantables de ciberseguridad, inteligencia artificial práctica 
+            y conectividad operativa para blindar la continuidad de cada comercio.
           </p>
         </div>
 
-        {/* Grilla de 3 Tarjetas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Grilla con Spotlight Magnético en cada tarjeta */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {values.map((item, index) => (
-            <div
+            <SpotlightCard
               key={index}
-              className="group relative flex flex-col justify-between bg-white rounded-2xl p-8 sm:p-9 border border-amber-900/10 shadow-[0_2px_12px_rgba(0,0,0,0.02)] transition-all duration-300 hover:border-amber-600/30 hover:shadow-[0_16px_36px_rgba(180,83,9,0.06)] hover:-translate-y-1"
+              className="p-6 sm:p-9 flex flex-col justify-between"
             >
-              {/* Micro-glow superior al hover */}
-              <div
-                className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-amber-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                aria-hidden="true"
-              />
-
               <div className="relative z-10">
                 {/* Header de la tarjeta */}
                 <div className="flex items-center justify-between pb-6 border-b border-zinc-100">
-                  <div className="p-3 rounded-xl bg-amber-500/[0.06] border border-amber-600/15">
+                  <div className="p-2.5 rounded-xl bg-amber-500/[0.06] border border-amber-600/15">
                     {item.icon}
                   </div>
 
-                  {/* Micro-badge */}
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wider uppercase bg-amber-500/[0.08] text-amber-900 border border-amber-600/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-600/90" />
-                    Estándar Teleios
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">
+                    Estándar #{index + 1}
                   </span>
                 </div>
 
@@ -177,14 +157,14 @@ export function TrustAndValues() {
                 </div>
               </div>
 
-              {/* Pie de tarjeta sutil */}
-              <div className="relative z-10 mt-8 pt-4 border-t border-zinc-100/60 flex items-center justify-between">
+              {/* Pie de tarjeta */}
+              <div className="relative z-10 mt-8 pt-4 border-t border-zinc-100 flex items-center justify-between">
                 <span className="text-[10px] tracking-[0.18em] uppercase text-zinc-400 font-medium">
-                  Garantía Arquitectónica
+                  Garantía de Arquitectura
                 </span>
                 <span className="text-amber-700/70 text-xs">✦</span>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
 

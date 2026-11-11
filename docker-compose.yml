@@ -1,0 +1,15 @@
+services:
+  teleios-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: teleios-studio
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - proxy-net
+
+networks:
+  npm_network:
+    external: true

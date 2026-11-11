@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="es"
       className={`${cinzel.variable} ${jakarta.variable} scroll-smooth`}
     >
-      <body className="bg-[#FAFAFA] text-zinc-900 font-sans antialiased selection:bg-amber-100 selection:text-amber-900 min-h-screen">
+      <body className="bg-[#FAFAFA] text-zinc-900 font-sans antialiased min-h-screen selection:bg-amber-100 selection:text-amber-900">
         {children}
       </body>
     </html>

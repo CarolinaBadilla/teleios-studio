@@ -10,12 +10,13 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -23,6 +24,30 @@ body {
   }
 }
 
+@keyframes laserScan {
+  0% {
+    top: 0%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 95%;
+    opacity: 0.85;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.2;
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-laser-scan {
+  animation: laserScan 3.5s ease-in-out infinite;
+}
+
+::selection {
+  background-color: rgba(245, 158, 11, 0.18);
+  color: #78350f;
 }
